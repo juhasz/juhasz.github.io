@@ -1,10 +1,29 @@
 @import "compass";
 
+$medium: 680px;
+$large: 1024px;
+
+$top-space: 150px;
+
+$link-font-size: 16px;
+$links-top-padding: 49px;
+
+$border: $link-font-size solid #eee;
+
+@media
+only screen and (-webkit-min-device-pixel-ratio : 2),
+only screen and (min-device-pixel-ratio : 2) {
+  body { font-size: 200%; }
+}
+
 html {
   height: 100%;
+  font-variant-ligatures: normal;
 }
 
 body {
+  width: 100%;
+
   min-height: 100%;
   background-color: #eeeeee; // Old browsers
   @include filter-gradient(#eeeeee, #cccccc, vertical); // IE6-8
@@ -12,19 +31,65 @@ body {
   $experimental-support-for-svg: true;
   @include background-image(linear-gradient(top, #eeeeee 0%, #cccccc 100%));
 
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #888;
+  text-transform: lowercase;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
 
-h1,
-.links {
-  float: left;
-}
-
 h1 {
-  font-size: 70px;
+  font-size: 72px;
+  margin: 0 $link-font-size 0 0;
+  padding-left: $link-font-size;
+  padding-bottom: $link-font-size;
+  border-left: $border;
 }
 
+
 .links {
-  font-size: 24px;
+  font-size: $link-font-size;
+  border-left: $border;
+  padding-left: $link-font-size;
+}
+
+.links li {
+  margin: 0 $link-font-size 0 0;
+  padding-bottom: $link-font-size;
+}
+
+.links a {
+  text-decoration: none;
+  color: #888;
+}
+
+.links a:hover {
+  color: #666;
+}
+
+
+@media (min-width: $medium) {
+  h1,
+  .links {
+    float: left;
+  }
+
+  h1 {
+    padding-top: $top-space;
+    padding-right: $link-font-size;
+    border-left: 0px;
+  }
+
+  .links {
+    padding-top: $top-space + $link-font-size + $links-top-padding;
+  }
+}
+
+@media (min-width: $large) {
+  .links {
+    padding-top: $top-space + $links-top-padding;
+  }
+
+  .links li {
+    float: left;
+  }
 }
