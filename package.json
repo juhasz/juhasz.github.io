@@ -1,0 +1,21 @@
+{
+  "name": "juhaszmarton.hu",
+  "version": "0.0.1",
+  "description": "Personal website of Márton Juhász",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juhasz/juhasz.github.io.git"
+  },
+  "author": "Marton Juhasz",
+  "bugs": {
+    "url": "https://github.com/juhasz/juhasz.github.io/issues"
+  },
+  "homepage": "https://github.com/juhasz/juhasz.github.io",
+  "devDependencies": {
+    "grunt-contrib-compass": "~1.0.1"
+  }
+}

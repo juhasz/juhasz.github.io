@@ -1,0 +1,30 @@
+@import "compass";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: #eeeeee; // Old browsers
+  @include filter-gradient(#eeeeee, #cccccc, vertical); // IE6-8
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  $experimental-support-for-svg: true;
+  @include background-image(linear-gradient(top, #eeeeee 0%, #cccccc 100%));
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+h1,
+.links {
+  float: left;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+.links {
+  font-size: 24px;
+}
